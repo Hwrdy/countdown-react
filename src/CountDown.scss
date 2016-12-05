@@ -1,0 +1,76 @@
+@import '../../styles/base';
+
+@keyframes clockwise-720 {
+  100% {
+    transform: rotate(720deg);
+  }
+}
+
+@keyframes counter-clockwise-360 {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes clockwise-1080 {
+  100% {
+    transform: rotate(1080deg);
+  }
+}
+
+.wrapper {
+  display: block;
+}
+
+.spinner {
+  float: left;
+  position: relative;
+  width: 30px;
+  height: 30px;
+
+  > div {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+
+  .secs {
+    position: absolute;
+    display: block;
+    left: 50%;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    font-weight: 300;
+    color: $red-fe8391;
+  }
+
+  .r {
+    background: url('assets/spinner/spinner-r.svg') center no-repeat;
+    animation: counter-clockwise-360 4s linear infinite;
+  }
+
+  .w {
+    background: url('assets/spinner/spinner-w.svg') center no-repeat;
+    animation: clockwise-1080 4s linear infinite;
+  }
+
+  .y {
+    background: url('assets/spinner/spinner-y.svg') center no-repeat;
+    animation: clockwise-720 4s linear infinite;
+  }
+
+}
+
+.description {
+  float: left;
+  position: relative;
+  font-size: 12px;
+  font-weight: 300;
+  color: $gray-999;
+  margin-left: 8px;
+}
